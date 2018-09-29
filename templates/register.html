@@ -1,0 +1,62 @@
+<html>
+<title>[TITLE]</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="crow.png" type="image/x-icon" />
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top capitalize" ng-controller="navigationCtrl">
+    <title>Crow PHP client</title>
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="crow.png" width="64px" height="64px" alt="crow">
+           &nbsp;&nbsp;<b>CROW</b>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+	<body>
+
+		<div class="col-md-6 col-lg-6 col-sm-6 offset-md-3 lg-offset-3 sm-offset-3">
+		<br/><br/><h4><b>Register</b></h4>
+		<br/><form method="POST" class="form-group">
+			<table class="table ">
+				<tr>
+					<td>
+						Email
+					</td>
+					<td>
+						<input type="email" name="email" placeholder="abc@example.com" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Password
+					</td>
+					<td>
+						<input type="password" name="password" placeholder="password" class="form-control">
+						<br/>
+						<p>If you forget the password then only way to recovery is by deleting the cr_user.json file outside your root directory</p>
+					</td>
+				</tr>
+				<tr>
+					
+				</tr>
+			</table>
+			<div class="text-center"><input type="submit" value="register" class="btn btn-primary"></div>
+			<br/><br/><br/><br/><br/>
+		</div>
+
+		<div class="container bg-dark col-lg-12 col-md-12 col-sm-12">
+
+        <div class="text-center center-block footer">
+          <p>
+           copyLeft <span class="copy-left">&copy;</span> <a href="https://github.com/naveen17797/crow" style="color: white;">Crow CMS</a>
+          </p>
+        </div>
+
+</div>
+
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<html ng-app="crow-php-client">
+<title>[TITLE]</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+	<head>
+	<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top capitalize">
+    <title>Crow PHP client</title>
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="crow.png" width="64px" height="64px" alt="crow">
+           &nbsp;&nbsp;<b>CROW</b>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+</head>
+<body>
+<div class="col-xs-12">
+  <br/><br/>
+</div>
+<div class="row">
+  <div class="col-md-9 col-lg-9 col-sm-9" >
+    <div class="card"> 
+
+      <div class="card-body">
+        <input type="text" name="cr_post_title" placeholder="Type your title" class="form-control title-text"  value="[POST_TITLE]">
+        <br/>
+    <div id="toolbar" style="width: 100%;"></div>
+    <textarea class="editable description-box">
+    [POST_DESCRIPTION]
+    </textarea>
+    <br/>
+    <div class="text-right"><button class="btn btn-primary">[ACTION_TEXT]</button></div></div></div></div>
+
+  <div class="col-md-3 col-lg-3 col-sm-3 recent-posts">
+  <div class="card">
+  <div class="card-body">
+      <h4>RECENT POSTS</h4>
+       <br/>
+      [CR_POSTS]
+  </div>
+</div>
+
+  </div>
+</div>
+
+    
+
+    
+    <div class="col-xs-12"><br/><br/></div>
+    <div class="container bg-dark col-lg-12 col-md-12 col-sm-12">
+
+        <div class="text-center center-block footer">
+          <p>
+           copyLeft <span class="copy-left">&copy;</span> <a href="https://github.com/naveen17797/crow" style="color: white;">Crow CMS</a>
+          </p>
+        </div>
+        </div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+</body>
+</html>
+
+
