@@ -69,7 +69,7 @@ function pushUpdatedFile ($filename, $sha, $content, $access_token, $owner, $rep
 		$options = array(CURLOPT_URL=>$url, CURLOPT_RETURNTRANSFER=>1, CURLOPT_POSTFIELDS=>$post_json, CURLOPT_CUSTOMREQUEST=>"PUT");
 		curl_setopt($curl, CURLOPT_USERAGENT, "Crow");
 		curl_setopt_array($curl, $options);
-		echo $json = curl_exec($curl);
+		$json = curl_exec($curl);
 		curl_close($curl);
 		
 

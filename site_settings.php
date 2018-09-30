@@ -27,8 +27,6 @@ if (isset($_POST)) {
 
 		$file_url = $file_info['download_url'];
 
-		$_SESSION['site_settings'] = getContentsFile($file_url);
-
 		$_SESSION['site_settings_sha'] = $file_info['sha'];
 
 		header("location: site_settings.php");
