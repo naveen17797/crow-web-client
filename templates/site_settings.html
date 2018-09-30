@@ -1,0 +1,49 @@
+<html ng-app="crow-php-client">
+<title>[TITLE]</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+	<head>
+	<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top capitalize">
+    <title>Crow PHP client</title>
+      <div class="container">
+        <a class="navbar-brand" href="index.php">
+          <img src="crow.png" width="64px" height="64px" alt="crow">
+           &nbsp;&nbsp;<b>CROW</b>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+</head>
+<body>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="index.php">Posts</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="site_settings.php">Site Settings</a>
+  </li>
+
+</ul>
+<div class="row">
+  <div class="col-md-9 col-lg-9 col-sm-9 offset-md-1 offset-sm-1 offset-lg-1" >
+  <br/><br/>
+    <div class="card"> 
+    <form method="POST">
+      <div class="card-body">
+      <b>Blog Name</b><br/><br/>
+<input type="text" name="blog_name" value="[BLOG_NAME_VALUE]" class="form-control">
+<br/><br/>
+<b>Blog Description</b><br/><br/>
+<input type="text" name="blog_description" value="[BLOG_DESCRIPTION_VALUE]" class="form-control">
+<br/><br/>
+<div class="text-right">
+<input type="submit" class="btn btn-primary" value="update">
+</div>
+      </div>
+      </form>
+      </div>
+      </div>
+      </div>

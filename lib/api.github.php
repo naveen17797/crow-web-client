@@ -50,22 +50,28 @@ function encrypt_decrypt($action, $string, $secret_key) {
 }
 
 
-function pushUpdatedFile ($filename, $sha, $message, $content, $access_token) {
-
+function pushUpdatedFile ($filename, $sha, $content, $access_token, $owner, $repo_name, $email) {
+		if (count($content) == 0) {
+			$content = "[{}]";
+		}
+		else {
+			$content = json_encode($content);
+		}
 		$curl = curl_init();
-		$url = "https://api.github.com/repos/".$owner."/".$repo_name."/contents/".$pathToFile."?access_token=$access_token";
+		$url = "https://api.github.com/repos/".$owner."/".$repo_name."/contents/".$filename."?access_token=$access_token";
 		$post_array = array();
-		$post_array["message"] = "update $filename";
-		$post_array["content"] = $content;
+		$post_array["message"] =  "update $filename";
+		$post_array["committer"]["name"] = $owner;
+		$post_array["committer"]["email"] = $email;
+		$post_array["content"] = base64_encode($content);
 		$post_array["sha"] = $sha;
 		$post_json = json_encode($post_array);  
-		$options = array(CURLOPT_URL=>$url, CURLOPT_RETURNTRANSFER=>1, CURLOPT_POSTFIELDS=>array($post_json));
+		$options = array(CURLOPT_URL=>$url, CURLOPT_RETURNTRANSFER=>1, CURLOPT_POSTFIELDS=>$post_json, CURLOPT_CUSTOMREQUEST=>"PUT");
 		curl_setopt($curl, CURLOPT_USERAGENT, "Crow");
 		curl_setopt_array($curl, $options);
-		$json = curl_exec($curl);
+		echo $json = curl_exec($curl);
 		curl_close($curl);
-		$array = json_decode($json, true);
-		print_r($array)
+		
 
 
 }

@@ -7,7 +7,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top capitalize">
     <title>Crow PHP client</title>
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
           <img src="crow.png" width="64px" height="64px" alt="crow">
            &nbsp;&nbsp;<b>CROW</b>
         </a>
@@ -18,23 +18,32 @@
     </nav>
 </head>
 <body>
-<div class="col-xs-12">
-  <br/><br/>
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="index.php">Posts</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="site_settings.php">Site Settings</a>
+  </li>
+
+</ul>
+
 <div class="row">
   <div class="col-md-9 col-lg-9 col-sm-9" >
     <div class="card"> 
-
+    <form method="POST">
       <div class="card-body">
-        <input type="text" name="cr_post_title" placeholder="Type your title" class="form-control title-text"  value="[POST_TITLE]">
-        <br/>
-    <div id="toolbar" style="width: 100%;"></div>
-    <textarea class="editable description-box">
+        <input type="text" name="cr_post_title" placeholder="Type your title" class="form-control title-text"  value="[POST_TITLE]" autofocus>
+        <input type="hidden" name="form_action" value="[POST_ACTION]">
+        <input type="hidden" name="cr_post_id" value="[CR_POST_ID]">
+
+    <br/>
+    <textarea class="editable description-box form-control" name="cr_post_description">
     [POST_DESCRIPTION]
     </textarea>
     <br/>
     <div class="text-right"><button class="btn btn-primary">[ACTION_TEXT]</button></div></div></div></div>
-
+</form>
   <div class="col-md-3 col-lg-3 col-sm-3 recent-posts">
   <div class="card">
   <div class="card-body">
