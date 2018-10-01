@@ -16,18 +16,22 @@ function removeKeyFromJSONArrayByProperty($propertyName, $propertyValue, $array)
 function updateArrayByProperty ($identifierPropertyName, $identifierPropertyValue,$propertyName, $propertyValue, $array){
      $index = 0;
      $indexToBeReplaced = "";
+
      foreach ($array as $key) {
      	if ($key[$identifierPropertyName] == $identifierPropertyValue) {
            		$indexToBeReplaced  = $index;
+                    break;
      	}
      	$index = $index + 1;
      }
+    $indexToBeReplaced = $indexToBeReplaced + 1;
+     
      for ($i = 0; $i < count($propertyName); $i++) {
      	$propName = $propertyName[$i];
      	$propValue = $propertyValue[$i];
      	$array[$indexToBeReplaced][$propName] = $propValue;
      }
-     return $array;
+   return $array;
 }
 
 

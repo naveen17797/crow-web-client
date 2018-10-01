@@ -27,12 +27,15 @@ if (isset($_POST)) {
 		$post_action = $_POST['form_action']; 
 		
 		//either be create, update, delete
-		if ($post_action == "edit_post") {
+		if ($post_action == "edit_post" && !empty($_POST['cr_post_id'])) {
 			$post_id = $_POST['cr_post_id'];
 			$post_title = $_POST['cr_post_title'];
 			$post_description = $_POST['cr_post_description'];
+			$post_description = html_entity_decode($post_description);
 			$propertyName = array("title", "description");
 			$propertyValue = array($post_title, $post_description);
+			$arr = updateArrayByProperty ("id", $post_id,$propertyName, $propertyValue, $_SESSION['posts']);
+
 			$_SESSION['posts'] = updateArrayByProperty ("id", $post_id,$propertyName, $propertyValue, $_SESSION['posts']);
 			
 			pushUpdatedFile ("cr_posts.json", $_SESSION['posts_file_sha'], $_SESSION['posts'], $_SESSION['access_token'], $_SESSION['owner'], $_SESSION['repo_name'], $_SESSION['user_email']);
@@ -45,12 +48,14 @@ if (isset($_POST)) {
 			$message = urlencode($message);
 			header("location: index.php?show_message=$message");
 			exit();
+			
 		}
 		else if ($post_action == "create_post") {
 			$random_id = md5(str_shuffle(time()));
 			
 			$post_title = $_POST['cr_post_title'];
 			$post_description = $_POST['cr_post_description'];
+			$post_description = html_entity_decode($post_description);
 			$propertyName = array("id","title","description","date_created", "author", "author_url");
 			$date_created = date("Y-m-d", time());
 			$author_url = "https://github.com/".$_SESSION['owner'];

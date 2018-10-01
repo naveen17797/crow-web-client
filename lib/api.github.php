@@ -65,7 +65,7 @@ function pushUpdatedFile ($filename, $sha, $content, $access_token, $owner, $rep
 		$post_array["committer"]["email"] = $email;
 		$post_array["content"] = base64_encode($content);
 		$post_array["sha"] = $sha;
-		$post_json = json_encode($post_array);  
+		$post_json = json_encode($post_array, JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_QUOT);  
 		$options = array(CURLOPT_URL=>$url, CURLOPT_RETURNTRANSFER=>1, CURLOPT_POSTFIELDS=>$post_json, CURLOPT_CUSTOMREQUEST=>"PUT");
 		curl_setopt($curl, CURLOPT_USERAGENT, "Crow");
 		curl_setopt_array($curl, $options);
